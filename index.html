@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="myscript.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<title>Michelin Restaurants</title>
+<div class="background">
+<body>
+    <div class="title">
+        <h1>The World of Michelin Star Restaurants</h1>
+    </div>
+
+    <h2>
+        One of the highest honours a restaurant can recieve is a michelin star. If you're looking for a fine dining experience that suites you, here's a rough guide on where to look! 
+    </h2>
+
+        <div class="maps">
+        <div id="map"></div>
+        </div>
+     
+        <div id="stackedbar"></div>
+
+        <div class="highlight">
+        <h6>
+            Click the dropdown to highlight the restaurant rating!
+        </h6>
+        </div>
+
+        <h3>
+            An interesting thing to note here is, while modern cuisine has the highest amount of total restaurants with Michelin Stars. Contemporary cuisine has the most restaurants with Two and Three stars.
+        </h3>
+
+        <div id="heatmap"></div>
+        <h4>
+            Here we can see the relationship between the different regions and their prefered cuisine. We can see that for contemporary cuisine, California has the most acclaimed restaurants. 
+        </h4>
+        <h4>    
+            As for modern cuisine, the place to go is the United Kingdom. Additionally, the United Kingdom also has the most variation in their Michelin Star restaurants.
+        </h4>
+
+            <div class = maps>
+                <div id="bubbleplot"></div>
+            </div>
+        <h5>
+            Finally, lets compare the quality of these restaurants to their respective price points!.  Whats expected here is that most three michelin star restaurants fall under the high price range, but its interesting to note that most of them aren't on the highest price bracket.
+        </h5>
+</body>
+</div>

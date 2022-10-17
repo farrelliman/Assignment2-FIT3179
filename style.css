@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "PlayfairDisplay-SemiBold";
+    src: url("PlayfairDisplay-SemiBold.ttf");
+}
+@font-face {
+    font-family: "JosefinSans-Light";
+    src: url(JosefinSans-Light.ttf);
+}
+
+@font-face {
+    font-family: "JosefinSans-Medium";
+    src: url(JosefinSans-Medium.ttf);
+}
+
+.title {
+    background-color: RGB(191, 175, 160);
+    padding: 20px;
+    font-size: medium;
+    border-style: solid;
+    border-width: 2px;
+    border-color:black;
+}
+
+.background {
+    background-color: RGB(249, 246, 239);
+    width: 1400px;
+    margin: auto;
+    padding: 10px;
+	border-style: solid;
+	border-color: black;
+  }
+
+.maps {
+    text-align: center;
+    font-size: 15px;
+    font-family: "JosefinSans-Medium";
+}
+
+.highlight {
+    background-color: RGB(191, 175, 160);
+    padding: 5px;
+    font-size: medium;
+    border-style: solid;
+    border-width: 2px;
+    border-color:black;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: "PlayfairDisplay-SemiBold";
+    text-align: center;
+    color: RGB(53, 53, 53);
+}
+
+#stackedbar {
+    float: left;
+    font-size: 15px;
+    font-family: "JosefinSans-Medium";
+}
+
+#heatmap {
+    float: right;
+}
+
+#bubbleplot {
+    text-align: center;
+    font-size: 15px;
+    font-family: "JosefinSans-Medium";
+}
+
+h2 {
+    font-size: 30px;
+    font-family: "JosefinSans-Light";
+    text-align: center;
+    padding-left: 150px;
+    padding-right: 150px;
+    color: RGB(102, 74, 50);
+}
+
+h3 {
+    font-size: 20px;
+    font-family: "JosefinSans-Light";
+    text-align: justify;
+    color: RGB(102, 74, 50);
+    margin-right: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+h4 {
+    font-size: 20px;
+    font-family: "JosefinSans-Light";
+    text-align: justify;
+    margin-top:140px;
+    color: RGB(102, 74, 50);
+}
+
+h5 {
+    font-size: 20px;
+    font-family: "JosefinSans-Light";
+    text-align: center;
+    color: RGB(102, 74, 50); 
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+h6 {
+    font-size: 20px;
+    font-family: "JosefinSans-Light";
+    text-align: justify;
+    color: RGB(102, 74, 50);
+    margin-right: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    color: black;
+}

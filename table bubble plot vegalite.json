@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 450,
+  "background":"RGB(249, 246, 239)",
+  "title":"Price to Michelin Rating",
+  "data": {
+    "url": "https://raw.githubusercontent.com/farrelliman/Datvis2/main/michelin-restaurants.csv"
+  },
+  "mark": {"type": "circle"},
+  "encoding": {
+    "x": {"field": "price", "type": "ordinal", "title": "Price"},
+    "y": {
+      "field": "michelin stars",
+      "type": "ordinal",
+      "sort": "descending",
+      "title": "Michelin Stars"
+    },
+    "color": {
+      "field": "michelin stars",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "scale": {"range": ["#fdc998", "#b93d02"]},
+      "title": "Number of Restaurants"
+    },
+    "size": {
+      "field": "michelin stars",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "scale": {"range": [100, 2000]}
+    },
+    "tooltip": [
+      {"field": "michelin stars", "type": "nominal", "title": "Michelin Stars"},
+      {"field": "price", "type": "ordinal", "title": "Price"},
+      {
+        "field": "sum_michelin stars",
+        "type": "quantitative",
+        "title": "Number of Restaurants"
+      }
+    ]
+  },
+  "config": {}
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1300,
+  "height": 650,
+  "background":"RGB(249, 246, 239)",
+  "title": "Restaurants with Michelin Stars Worldwide",
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/farrelliman/Datvis2/main/ne_50m.json",
+        "format": {"type": "topojson", "feature": "ne_50m_ocean"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightblue"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/farrelliman/Datvis2/main/ne_50m.json",
+        "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "grey", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/farrelliman/Datvis2/main/michelin-restaurants.csv"
+      },
+      "params": [
+        {
+          "name": "num_stars",
+          "select": {"type": "point", "fields": ["michelin stars"]},
+          "bind": {
+            "input": "select",
+            "options": [null, "1", "2", "3"],
+            "labels": ["All", "One Star", "Two Stars", "Three Stars"],
+            "name": "Number of Stars : "
+          }
+        }
+      ],
+      "mark": {"type": "square", "size": 200},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "color": {
+          "condition": {
+            "param": "num_stars",
+            "field": "michelin stars",
+            "type": "ordinal",
+            "legend": null,
+            "scale": {
+              "domain": ["1", "2", "3"],
+              "range": ["#cd7f32", "#d1d3b1", "#ffd700"]
+            }
+          },
+          "value": null
+        },
+        "tooltip": [
+          {"field": "region", "type": "nominal", "title": "Region"},
+          {
+            "field": "michelin stars",
+            "type": "nominal",
+            "title": "Number of Stars"
+          },
+          {"field": "cuisine", "type": "nominal", "title": "Cuisine"},
+          {"field": "price", "type": "nominal", "title": "Price"}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 300,
+  "background":"RGB(249, 246, 239)",
+  "title": "Most Popular Cuisine with Michelin Stars",
+  "data": {
+    "url": "https://raw.githubusercontent.com/farrelliman/Datvis2/main/michelin-restaurants.csv"
+  },
+  "mark": {"type": "bar"},
+  "params": [
+    {
+      "name": "num_stars",
+      "select": {"type": "point", "fields": ["michelin stars"]},
+      "bind": {
+        "input": "select",
+        "options": [null, "1", "2", "3"],
+        "labels": ["All", "One Star", "Two Stars", "Three Stars"],
+        "name": "Number of Stars : "
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "cuisine",
+      "type": "ordinal",
+      "sort": "-y",
+      "title": "Cuisine"
+    },
+    "y": {
+      "field": "michelin stars",
+      "aggregate": "sum",
+      "type": "quantitative",
+      "title": "Number of Restaurants"
+    },
+    "color": {
+      "condition": {
+        "param": "num_stars",
+        "field": "michelin stars",
+        "type": "ordinal",
+        "scale": {
+          "domain": ["1", "2", "3"],
+          "range": ["#cd7f32", "#d1d3b1", "#ffd700"]
+        },
+        "title": "Number of Stars"
+      },
+      "value": "grey"
+    },
+    "tooltip": [
+      {"field": "cuisine", "type": "nominal", "title": "Cuisine"},
+      {"field": "michelin stars", "type": "ordinal", "title": "Michelin Stars"},
+      {
+        "field": "sum_michelin stars",
+        "type": "quantitative",
+        "title": "Number of Restaurants"
+      }
+    ]
+  },
+  "config": {}
+}

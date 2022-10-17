@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 300,
+  "background":"RGB(249, 246, 239)",
+  "title": "Type of Cuisine and Region",
+  "data": {
+    "url": "https://raw.githubusercontent.com/farrelliman/Datvis2/main/michelin-restaurants.csv"
+  },
+  "mark": {"type": "rect"},
+  "encoding": {
+    "x": {"field": "cuisine", "type": "ordinal", "title": "Cuisine"},
+    "y": {"field": "region", "type": "nominal", "title": "Region"},
+    "color": {
+      "field": "michelin stars",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "scale": {"range": ["#fdc998", "#b93d02"]},
+      "title": "Restaurants with Michelin Stars"
+    },
+    "tooltip": [
+      {"field": "region", "type": "nominal", "title": "Region"},
+      {"field": "cuisine", "type": "nominal", "title": "Cuisine"},
+      {
+        "field": "sum_michelin stars",
+        "type": "quantitative",
+        "title": "Number of Restaurants"
+      }
+    ]
+  },
+  "config": {}
+}
